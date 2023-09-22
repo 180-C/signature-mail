@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body class="h-100">
+<div>
+<table id="signature">
+	<tbody style="font-family: 'Helvetica';">
+		<tr>
+			<td width="100" height="120">
+				<a href="https://180c.ch">
+					<img src="https://drive.google.com/uc?export=view&id=1DwRpelz9z3zMJimq8AKWfGMaQwOclioO" alt="logo" width="100" height="100" style="padding: 5px">
+				</a>
+				<table> 
+					<tbody>
+						<tr> 
+						</tr>
+						<tr>
+							<td>
+								<a href="mailto:epfl180c@gmail.com" style="text-decoration: none">
+									<img src="https://drive.google.com/uc?export=view&id=1Jiz3jmXGisVZmtKJCYYenFGe_s5_K4-j" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
+								</a>
+							</td>
+							<td>
+								<a href="https://t.me/news_180C">
+									<img src="https://drive.google.com/uc?export=view&id=1A5mak4h7-e9K6iKuaCn6VbjU2VBHRn3S" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
+								</a>
+							</td>
+							<td>
+								<a href="https://instagram.com/epfl_180c">
+									<img src="https://drive.google.com/uc?export=view&id=1DtTabtuzCOqTWiO4k0l5Gtptlp1rlUlt" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
+								</a>
+							</td> 
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td style="border-left: solid black 1px;">
+				<table>
+					<tbody>
+						<tr>
+							<td><strong id="name">Prénom Nom</strong> | <strong id="poste">Poste</strong></td>
+						</tr>
+						<tr>
+							<td><a id="phone">+41 0 00 00 00 00</a> | <a id="mail" href="mailto:">prenom.nom@epfl.ch</a></td>
+						</tr><tr><td height="5"></td></tr>
+						
+						<tr>
+							<td><strong>180°C</strong> <br>Station 9<br> CH-1015 Lausanne</td>
+						</tr>
+						<tr><td height="2"></td></tr>
+						<tr>
+							<td> <a href="https://180c.ch">180c.ch</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+<div style="margin-top: 50px;">
+	<label>Prénom Nom</label>
+	<input type="text" name="name">
+	<label>Poste</label>
+	<input type="text" name="poste">
+	<label>Numéro</label>
+	<input type="text" name="phone">
+	<label>Mail</label>
+	<input type="text" name="mail">
+	<button id="update">Update</button>
+</div>
+</body>
+<script type="text/javascript">
+	document.getElementById("update").addEventListener("click", () => {
+		let name = document.getElementsByName("name")[0].value;
+		let poste = document.getElementsByName("poste")[0].value;
+		let phone = document.getElementsByName("phone")[0].value;
+		let mail = document.getElementsByName("mail")[0].value;
+		document.getElementById("name").innerHTML = name;
+		document.getElementById("poste").innerHTML = poste;
+		document.getElementById("phone").innerHTML = phone;
+		document.getElementById("mail").innerHTML = mail;
+		document.getElementById("mail").href = "mailto:" + mail;
+	});
+</script>
+</html>
