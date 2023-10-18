@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
 </head>
 <body class="h-100">
-<div>
+<div id="signature-wrapper">
 <table id="signature">
 	<tbody style="font-family: 'Helvetica';">
 		<tr>
@@ -12,22 +12,20 @@
 				<a href="https://180c.ch">
 					<img src="https://drive.google.com/uc?export=view&id=1DwRpelz9z3zMJimq8AKWfGMaQwOclioO" alt="logo" width="100" height="100" style="padding: 5px">
 				</a>
-				<table> 
-					<tbody>
-						<tr> 
-						</tr>
+				<table style="width: 100%;"> 
+					<tbody style="justify-content: center; width: 100%;">
 						<tr>
-							<td>
+							<td style="text-align: center;">
 								<a href="mailto:epfl180c@gmail.com" style="text-decoration: none">
 									<img src="https://drive.google.com/uc?export=view&id=1Jiz3jmXGisVZmtKJCYYenFGe_s5_K4-j" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
 								</a>
 							</td>
-							<td>
+							<td style="text-align: center;">
 								<a href="https://t.me/news_180C">
 									<img src="https://drive.google.com/uc?export=view&id=1A5mak4h7-e9K6iKuaCn6VbjU2VBHRn3S" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
 								</a>
 							</td>
-							<td>
+							<td style="text-align: center;">
 								<a href="https://instagram.com/epfl_180c">
 									<img src="https://drive.google.com/uc?export=view&id=1DtTabtuzCOqTWiO4k0l5Gtptlp1rlUlt" alt="logo" width="19" height="19" style=" padding-right: 5 ; padding-left: 5">
 								</a>
@@ -43,11 +41,11 @@
 							<td><strong id="name">Prénom Nom</strong> | <strong id="poste">Poste</strong></td>
 						</tr>
 						<tr>
-							<td><a id="phone">+41 0 00 00 00 00</a> | <a id="mail" href="mailto:">prenom.nom@epfl.ch</a></td>
+							<td><a id="phone">+41 0 00 00 00 00</a> | <a id="mail" href="mailto:prenom.nom@epfl.ch">prenom.nom@epfl.ch</a></td>
 						</tr><tr><td height="5"></td></tr>
 						
 						<tr>
-							<td><strong>180°C</strong> <br>Station 9<br> CH-1015 Lausanne</td>
+							<td><strong>180°C</strong><br>CH-1015 Lausanne</td>
 						</tr>
 						<tr><td height="2"></td></tr>
 						<tr>
@@ -69,7 +67,8 @@
 	<input type="text" name="phone">
 	<label>Mail</label>
 	<input type="text" name="mail">
-	<button id="update">Update</button>
+	<button id="update">Actualiser</button>
+	<button id="copy">Copier</button>
 </div>
 </body>
 <script type="text/javascript">
@@ -84,5 +83,12 @@
 		document.getElementById("mail").innerHTML = mail;
 		document.getElementById("mail").href = "mailto:" + mail;
 	});
+
+	document.getElementById("copy").addEventListener("click", () => {
+		let signature = document.getElementById("signature-wrapper").innerHTML
+		const blobInput = new Blob([signature], { type: 'text/html' })
+  		navigator.clipboard.write([new ClipboardItem({ ['text/html']: blobInput })])
+		alert("Signature copiée dans le presse-papier !")
+	})
 </script>
 </html>
